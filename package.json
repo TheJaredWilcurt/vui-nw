@@ -6,6 +6,7 @@
     "start": "nw ."
   },
   "window": {
+    "icon": "assets/icon.png",
     "width": 800,
     "height": 600
   },
@@ -14,5 +15,7 @@
   },
   "devDependencies": {
     "nw": "sdk"
-  }
+  },
+  "repository": "https://github.com/TheJaredWilcurt/vui-nw",
+  "license": "MIT"
 }
