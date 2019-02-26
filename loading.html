@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vui-NW</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="message">Loading Vue UI...</h1>
+
+    <script type="text/javascript">
+      function check () {
+        fetch('http://localhost:8242')
+          .then(function (data) {
+            if (data.status == 200) {
+              location.href = 'http://localhost:8242';
+            } else {
+              console.log(data);
+            }
+          })
+          .catch(function (err) {
+            console.log('Still loading Vue UI:', err);
+          });
+      }
+
+      setInterval(function () {
+        check();
+      }, 2 * 500);
+
+      setTimeout(function () {
+        let h1 = document.getElementById('message');
+        h1.innerText = 'This is taking longer than it should. You should kill this process and make sure there are no rogue Node or NW executables running in task manager.';
+      }, 30 * 1000);
+    </script>
+  </body>
+</html>

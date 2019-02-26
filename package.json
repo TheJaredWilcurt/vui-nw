@@ -1,20 +1,21 @@
 {
   "name": "vui-nw",
-  "main": "http://localhost:8242/project/select",
-  "node-main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "nw ."
   },
   "window": {
     "icon": "assets/icon.png",
     "width": 800,
-    "height": 600
+    "height": 600,
+    "show": true,
+    "show_in_taskbar": false
   },
   "dependencies": {
     "@vue/cli": "latest"
   },
   "devDependencies": {
-    "nw": "sdk"
+    "nw": "0.33.4-sdk"
   },
   "repository": "https://github.com/TheJaredWilcurt/vui-nw",
   "license": "MIT"

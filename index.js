@@ -1,4 +1,20 @@
 let path = require('path');
-let exec = require('child_process').execSync;
-let executableAndArgs = path.join('.', 'node_modules', '.bin', 'vue ui --port 8242 --headless');
-exec(executableAndArgs);
+let executable = path.join('.', 'node_modules', '.bin', 'vue')
+let args = ['ui', '--port=8242', '--headless'];
+let executableAndArgs = executable + ' ' + args.join(' ');
+
+const { exec } = require('child_process');
+let server = exec(executableAndArgs, (error, stdout, stderr) => {
+  if (error) {
+    console.error('exec error: ' + error);
+    return;
+  }
+  console.log('stdout: ' + stdout);
+  console.log('stderr: ' + stderr);
+});
+
+function die () {
+  server.kill();
+}
+
+
