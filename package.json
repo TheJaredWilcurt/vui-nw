@@ -16,9 +16,7 @@
   },
   "devDependencies": {
     "nw": "0.33.4-sdk"
-    "nw-vue-devtools": "latest"
   },
-  "chromium-args": "--load-extension='./node_modules/nw-vue-devtools/extension'",
   "repository": "https://github.com/TheJaredWilcurt/vui-nw",
   "license": "MIT"
 }
